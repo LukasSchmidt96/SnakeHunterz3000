@@ -1,4 +1,4 @@
-package aktionen;
+package actions;
 
 public class Main {
 

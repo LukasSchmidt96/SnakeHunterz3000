@@ -1,4 +1,4 @@
-package clock;
+package clocks;
 
 public class GameClock {
 
