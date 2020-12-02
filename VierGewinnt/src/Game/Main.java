@@ -47,7 +47,7 @@ public class Main {
 		//Gameloop
 		Scanner in = new Scanner(System.in);
 		
-		//Counter für 42 Felder 
+		//Counter fï¿½r 42 Felder 
 		int count = 0;
 		while(count <= 42) {
 
@@ -110,7 +110,7 @@ public class Main {
 		
 		
 		
-		
+		//test commit
 
 	
 	
