@@ -55,24 +55,30 @@ public class Main {
 					}System.out.println();		
 				}count += 1;
 				
+				
+				
+				
 				//Gewinnanalyse
 				
-					
 				
-				
-					int win1 = 0; // vertikal
-					int win2 = 0; // horizontal
+					int win1 = 1; // vertikal
+					int win2 = 1; // horizontal
 				    
-					for (int rechts = 0; rechts <= 4; rechts++) {
-						if (feld[Zeile1][a+rechts] == " x |" &&  (a+rechts) < 7) {
+					if  (a < 7) {
+						
+					for (int rechts = 1; rechts <= 4; rechts++) {
+						
+					
+						if (feld[Zeile1][a+rechts] == " x |" &&  (a+rechts) < 7 ) {
 							win1++; 
 							}
 						
 						else {
 							break; 
 						}
-				
+						}
 					}
+				
 					
 					for (int links = 1; links <= 4; links ++) {
 						if (feld[Zeile1][a-links] == " x |" && (a-links) > 0) {
@@ -84,9 +90,12 @@ public class Main {
 						}
 					}
 					 
+					
 				
-	              
-					for (int oben = 0; oben <= 4; oben++) {
+	                if (Zeile1 < 5 ) {
+	                	
+	                
+					for (int oben = 1; oben <= 4; oben++) {
 						if (feld[Zeile1+oben][a] == " x |" && (Zeile1+oben) < 6) {
 							win2++; 
 							}
@@ -94,10 +103,10 @@ public class Main {
 						else {
 							break; 
 						}
-					}
+					}}
 					
-					for (int unten = 0; unten <= 4; unten++) {
-						if (feld[Zeile1-unten][a] == " x |" && (Zeile1-unten) >=  1) {
+					for (int unten = 1; unten <= 4; unten++) {
+						if (feld[Zeile1-unten][a] == " x |" && (Zeile1-unten) >=  0) {
 							win2++; 
 							}
 						else {
@@ -105,8 +114,10 @@ public class Main {
 						}
 					}
 					
+					
+	                
 					//Kontrolle ob jemand gewonnen hat
-					if (win1 > 3 || win2 > 3) {
+					if (win1 == 4 || win2 == 3) {
 						System.out.println ("Spieler1 hat gewonnen"); 
 						Spieler1 = true; 
 						break; 
@@ -151,23 +162,30 @@ public class Main {
 				
 				
 				
-				
-				int win1 = 0; // vertikal
-				int win2 = 0; // horizontal
+				int win1 = 1; // vertikal
+				int win2 = 1; // horizontal
 			    
-				for (int rechts = 0; rechts < 4; rechts++) {
-					if (feld[Zeile2][b+rechts] == " o |" &&  b+rechts < 7 ) {
+				if (b < 7) {
+					
+				for (int rechts = 1; rechts <= 4; rechts++) {
+					
+				
+					if (feld[Zeile2][b+rechts] == " o |" &&  (b+rechts) < 7 ) {
 						win1++; 
 						}
 					
 					else {
 						break; 
 					}
-			
+					}
 				}
+			
 				
-				for (int links = 1; links < 4; links ++) {
-					if (feld[Zeile2][b-links] == " o |" && b-links > 0) {
+		
+				
+				
+				for (int links = 1; links <= 4; links++) {
+					if (feld[Zeile2][b-links] == " o |" && (b-links) > 0) {
 						win1++; 
 						}
 					
@@ -176,11 +194,12 @@ public class Main {
 					}
 				}
 				 
+				
 			
-                
+                if (Zeile2 < 5 ) {
                 	
-                // Kontrolle Spieler2 nach oben 
-				for (int oben = 0; oben < 4; oben++) {
+                
+				for (int oben = 1; oben <= 4; oben++) {
 					if (feld[Zeile2+oben][b] == " o |" && (Zeile2+oben) < 6) {
 						win2++; 
 						}
@@ -188,20 +207,21 @@ public class Main {
 					else {
 						break; 
 					}
-				}
+				}}
 				
-				// Kotrolle Spieler2 nach unten
-				for (int unten = 0; unten < 4; unten++) {
-					if (feld[Zeile2-unten][b] == " o |" && feld[Zeile2-unten].length >=  1) {
+				for (int unten = 1; unten <= 4; unten++) {
+					if (feld[Zeile2-unten][b] == " o |" && (Zeile2-unten) >=  0) {
 						win2++; 
 						}
 					else {
 						break; 
 					}
-				}
+				} 
+				
+				
 				
 				//Kontrolle ob jemand gewonnen hat
-				if (win1 > 3 || win2 > 3) {
+				if (win1 == 4 || win2 == 3) {
 					System.out.println ("Spieler2 hat gewonnen"); 
 					Spieler2 = true; 
 					break; 
@@ -219,6 +239,4 @@ public class Main {
 			
 			
 						
-		
-		
 		
