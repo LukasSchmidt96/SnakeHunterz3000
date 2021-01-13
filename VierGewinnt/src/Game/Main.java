@@ -188,7 +188,7 @@ public class Main {
 							}
 						    stopp1= 0;
 							
-							
+							if(count >= 42) System.out.println("Unentschieden");				
 							
 			}	
 		}	
