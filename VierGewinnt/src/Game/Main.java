@@ -36,19 +36,26 @@ public class Main {
 				int a = in.nextInt();											
 				// überprüfe ob auch nur Zahl von 1 bis 7 eingegeben wurde 
 				if(a <= 7 && a >=1) {
-				//While schleife durchläuft die Spalte "a" von unten nach oben, und schaut, wo der nächste freie Platz ist !!		
-				int Zeile1 = 6;
-				while(Zeile1 > 0) {
-				    if(feld[Zeile1][a] == "   |") {
-						feld[Zeile1][a]=" x |";
-						//Wenn gefunden, break--> While schleife wird verlassen!!!
-						break;
-					}Zeile1 = Zeile1-1; 
-					//Wenn nicht, suche weiter, bis du as gefunden hast !!
-                    if(feld[Zeile1][a] == " x |"||feld[Zeile1][a] == " o |") {						    Zeile1 = Zeile1 -1;														
-                    }
+					//While schleife durchläuft die Spalte "a" von unten nach oben, und schaut, wo der nächste freie Platz ist !!
+					
+		
+					int Zeile1 = 6;
+					while(Zeile1 > 0) {
+				    	if(feld[Zeile1][a] == "   |") {
+							feld[Zeile1][a]=" x |";
+							//Wenn gefunden, break--> While schleife wird verlassen!!!
+							break;
+						}Zeile1 = Zeile1-1; 
+						//Wenn nicht, suche weiter, bis du as gefunden hast !!
+                    	if(feld[Zeile1][a] == " x |"||feld[Zeile1][a] == " o |") {						    Zeile1 = Zeile1 -1;														
+						}
+						if(Zeile1 == 0) {
+							System.out.println("Bitte wähle eine andere Spalte!");
+							count = count - 1;
+						}
+					}
 					//und jetzt druck den ganzen bums aus!
-                }
+                	
                 for(int i = 0; i < feld.length; i++) {
 					for(int j = 0; j < feld[i].length; j++) {
 							System.out.print(feld[i][j]);
@@ -56,7 +63,9 @@ public class Main {
                         System.out.println();		
                     }
                     count += 1;
-				} else {
+				} 
+					
+				else {
 					System.out.println("Ungültige Eingabe");
 					System.out.println("Bitte nur Zahlen von 1 bis 7 eingeben... nur so viele Spalten gibt es!");
 				}
