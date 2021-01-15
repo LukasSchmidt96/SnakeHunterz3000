@@ -137,8 +137,13 @@ public class Main {
 									if(feld[Zeile2][b] == " x |"||feld[Zeile2][b] == " o |") {														
 										Zeile2 = Zeile2 -1;												
 									}
-									//und jetzt druck den ganzen bums wieder aus!
-								}for(int i = 0; i < feld.length; i++) {
+									if(Zeile2 == 0) {
+										System.out.println("Bitte wähle eine andere Spalte!");
+										count = count - 1;
+									}
+								}
+								//und jetzt druck den ganzen bums wieder aus!
+								for(int i = 0; i < feld.length; i++) {
 									for(int j = 0; j < feld[i].length; j++) {
 										System.out.print(feld[i][j]);
 									}System.out.println();		
