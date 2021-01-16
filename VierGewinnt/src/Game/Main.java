@@ -1,4 +1,4 @@
-
+package Game;
 import java.util.Scanner;
 
 
@@ -47,6 +47,12 @@ public class Main {
 					//Wenn nicht, suche weiter, bis du as gefunden hast !!
                     if(feld[Zeile1][a] == " x |"||feld[Zeile1][a] == " o |") {						    Zeile1 = Zeile1 -1;														
                     }
+                    if(Zeile1 == 0) {
+						System.out.println("Bitte wähle eine andere Spalte!");
+						count = count - 1;
+					}
+                    
+                    
 					//und jetzt druck den ganzen bums aus!
                 }
                 for(int i = 0; i < feld.length; i++) {
@@ -127,6 +133,10 @@ public class Main {
 									//Wenn nicht, suche weiter, bis du was gefunden hast !!
 									if(feld[Zeile2][b] == " x |"||feld[Zeile2][b] == " o |") {														
 										Zeile2 = Zeile2 -1;												
+									}
+									if(Zeile2 == 0) {
+										System.out.println("Bitte wähle eine andere Spalte!");
+										count = count - 1;
 									}
 									//und jetzt druck den ganzen bums wieder aus!
 								}for(int i = 0; i < feld.length; i++) {
