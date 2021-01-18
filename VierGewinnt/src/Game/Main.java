@@ -1,29 +1,10 @@
-
 import java.util.Scanner;
 
 
 public class Main {
 
 	public static void main(String[] args) {	
-		
-		// Das Spielfeld wird ausgegeben, (Als Übersicht)
-		System.out.println("\n        Vier Gewinnt\n");		
-		String feld [][]= {   	 // [][1]  [][2]    [][2]   [][4]   [][5]   [][6]  [][7] 
-							{ "|" ," 1 |", " 2 |", " 3 |", " 4 |", " 5 |", " 6 |", " 7 |"},  
-							{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[1][]	
-							{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[2][]
-							{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[3][]
-							{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[4][]
-							{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[5][]
-							{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"}   //[6][]
-				
-        };		
-		for(int i = 0; i < feld.length; i++) {
-			for(int j = 0; j < feld[i].length; j++) {
-			System.out.print(feld[i][j]);
-		}System.out.println();
-		}					
-
+		String feld [][]= display();
 		//Gameloop
 		Scanner in = new Scanner(System.in);		
 		//Counter für 42 Felder 
@@ -205,6 +186,31 @@ public class Main {
 							if(count >= 42) System.out.println("Unentschieden");				
 							
 			}	
-		}	
-}		
+		}
+	
+	public static String [][] display (){
+		// Das Spielfeld wird ausgegeben, (Als Übersicht)
+				System.out.println("\n        Vier Gewinnt\n");		
+				String feld [][]= {   	 // [][1]  [][2]    [][2]   [][4]   [][5]   [][6]  [][7] 
+									{ "|" ," 1 |", " 2 |", " 3 |", " 4 |", " 5 |", " 6 |", " 7 |"},  
+									{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[1][]	
+									{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[2][]
+									{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[3][]
+									{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[4][]
+									{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[5][]
+									{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"}   //[6][]
+						
+		        };		
+				for(int i = 0; i < feld.length; i++) {
+					for(int j = 0; j < feld[i].length; j++) {
+					System.out.print(feld[i][j]);
+				}System.out.println();
+				}	
+				return feld;
+	}
 
+}	
+
+
+	
+		
