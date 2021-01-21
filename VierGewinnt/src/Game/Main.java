@@ -301,7 +301,7 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Vier Gewinnt von SnakeHunterz3000 \n"
 				           +    "Wenn du möchtest erklären wir dir noch kurz die Spielregeln"); 
-		System.out.println("1: Ich bin brauche eine Spielanleitung \n2: Ich kenne das Spielbereits ohne möchte nun loslegen"); 
+		System.out.println("1: Ich brauche eine Spielanleitung \n2: Ich kenne das Spiel bereits und möchte nun loslegen"); 
 		int b = in.nextInt(); 
 		if (b == 1) {
 			System.out.println ("Schaffe es vor deinem Gegner vier Spielsteine\n"
@@ -309,7 +309,7 @@ public class Main {
 					          + "oder diagonale Reihe zu bringen! Dabei werden\n"
 					          + "abwechselnd von oben neue Spielchips eingeworfen,\n"
 					          + "wobei es nicht nur gilt auf den eigenen Erfolg zu achten,\n"
-					          + "sondern auch darauf das es eurem Gegenspieler nicht\n"
+					          + "sondern auch darauf, dass es eurem Gegenspieler nicht\n"
 					          + "gelingt die Reihe zu vollenden.\n"
 					          + "Los gehts!");
 		}		
