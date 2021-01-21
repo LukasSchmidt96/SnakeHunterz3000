@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		 
+		Spielanleitung();  
 		String feld [][]= display();
 		//Gameloop
 		Scanner in = new Scanner(System.in);		
@@ -325,8 +325,32 @@ public class Main {
 				return feld;
 	}
 	
-
+	public static void Spielanleitung () {
+		Scanner in = new Scanner(System.in);
+	    
+		System.out.println("Vier Gewinnt von SnakeHunterz3000 \n"
+				           +    "Wenn du möchtest erklären wir dir noch kurz die Spielregeln"); 
+		System.out.println("1: Ich bin brauche eine Spielanleitung \n2: Ich kenne das Spielbereits ohne möchte nun loslegen"); 
+		int b = in.nextInt(); 
+		if (b == 1) {
+			System.out.println ("Schaffe es vor deinem Gegner vier Spielsteine\n"
+					          + "deiner Farbe in eine waagerechte, senkrechte\n"
+					          + "oder diagonale Reihe zu bringen! Dabei werden\n"
+					          + "abwechselnd von oben neue Spielchips eingeworfen,\n"
+					          + "wobei es nicht nur gilt auf den eigenen Erfolg zu achten,\n"
+					          + "sondern auch darauf das es eurem Gegenspieler nicht\n"
+					          + "gelingt die Reihe zu vollenden.\n"
+					          + "Los gehts!"); 
+			                  
+			
+		}
+		else { 
+			
+			 
+		}
+	}
 	
 	  
 
 }	
+
