@@ -1,9 +1,12 @@
+
+
 import java.util.Scanner;
 
 
 public class Main {
 
-	public static void main(String[] args) {	
+	public static void main(String[] args) {
+		 
 		String feld [][]= display();
 		//Gameloop
 		Scanner in = new Scanner(System.in);		
@@ -77,19 +80,21 @@ public class Main {
 				break;
 			}
 			stopp= 0;
+			
 			int spaltenanzahl = feld[0].length;
 			int spaltensumme = 0;
 			for (int j = 0; j <  spaltenanzahl; j++) {
 				for (int i = 0; i < feld.length; i++) {
 					if(feld[i][j].equals(" x |")) {
 					    spaltensumme += 1;
-						if(spaltensumme == 4) {
+						if(spaltensumme >= 4) {
 							System.out.println("Spieler 1 hat gewonnen!");
 							stopp = 1;									  
 						}
 					}
 					if(feld[i][j].equals("   |")||feld[i][j].equals(" o |")) {
-						spaltensumme = 0;					
+						spaltensumme = 0;	
+						break; 
 					}	
 				}
 			    spaltensumme = 0;
@@ -98,6 +103,62 @@ public class Main {
 				break;
 			}
 			stopp= 0;
+			
+			 int diagonalsumme1 = 0; 
+				for (int i = 0; i <=  6; i++) {
+					for (int j = 7; j >= 0; j--) {
+						diagonalsumme1 = 0; 
+						    if (j-3 >= 0 && i+3 < feld.length) {
+						    	for (int k = 0; k <= 3; k++) {
+						    		if (feld[i+k][j-k].equals(" x |")){
+									    diagonalsumme1++; 
+						    		}
+						    		else if(feld[i+k][j-k].equals("   |")||feld[i+k][j-k].equals(" o |")) {
+										diagonalsumme1 = 0;	
+										break; 
+									}	
+						    	}
+						    		if (diagonalsumme1 == 4) {
+								    	 stopp = 1; 
+								    	 System.out.println("Spieler 1 hat gewonnen!"); 
+								    	 break; 
+								     }
+						}
+					}
+				}
+						if (stopp == 1) {
+							break;
+						}
+						stopp= 0;
+				
+
+		    int diagonalsumme2 = 0; 
+			for (int i = 0; i <=  6; i++) {
+				for (int j = 0; j <= 7; j++) {
+					diagonalsumme2 = 0; 
+					    if (j+3 <= 7 && i+3 < feld.length) {
+					    	for (int k = 0; k <= 3; k++) {
+					    		if (feld[i+k][j+k].equals(" x |")){
+								    diagonalsumme2++; 
+					    		}
+					    		else if(feld[i+k][j+k].equals("   |")||feld[i+k][j+k].equals(" o |")) {
+									diagonalsumme2 = 0;	
+									break; 
+								}	
+					    	}
+					    		if (diagonalsumme2 == 4) {
+							    	 stopp = 1; 
+							    	 System.out.println("Spieler 1 hat gewonnen!"); 
+							    	 break; 
+							     }
+					}
+				}
+			}
+					if (stopp == 1) {
+						break;
+					}
+					stopp= 0;
+			
 							
 							// Das gleiche nochmal für Spieler 2																
 							// Spieler 2 ist an der Reihe !	
@@ -182,15 +243,70 @@ public class Main {
 								break;
 							}
 						    stopp1= 0;
+						    
+						    
+							 int diagonalsumme3 = 0; 
+								for (int i = 0; i <=  6; i++) {
+									for (int j = 7; j >= 0; j--) {
+										diagonalsumme3 = 0; 
+										    if (j-3 >= 0 && i+3 < feld.length) {
+										    	for (int k = 0; k <= 3; k++) {
+										    		if (feld[i+k][j-k].equals(" o |")){
+													    diagonalsumme3++; 
+										    		}
+										    		else if(feld[i+k][j-k].equals("   |")||feld[i+k][j-k].equals(" x |")) {
+														diagonalsumme3 = 0;	
+														break; 
+													}	
+										    	}
+										    		if (diagonalsumme3 == 4) {
+												    	 stopp = 1; 
+												    	 System.out.println("Spieler 2 hat gewonnen!"); 
+												    	 break; 
+												     }
+										}
+									}
+								}
+										if (stopp == 1) {
+											break;
+										}
+										stopp= 0;
+								
+
+						    int diagonalsumme4 = 0; 
+							for (int i = 0; i <=  6; i++) {
+								for (int j = 0; j <= 7; j++) {
+									diagonalsumme4 = 0; 
+									    if (j+3 <= 7 && i+3 < feld.length) {
+									    	for (int k = 0; k <= 3; k++) {
+									    		if (feld[i+k][j+k].equals(" o |")){
+												    diagonalsumme4++; 
+									    		}
+									    		else if(feld[i+k][j+k].equals("   |")||feld[i+k][j+k].equals(" x |")) {
+													diagonalsumme4 = 0;	
+													break; 
+												}	
+									    	}
+									    		if (diagonalsumme4 == 4) {
+											    	 stopp = 1; 
+											    	 System.out.println("Spieler 2 hat gewonnen!"); 
+											    	 break; 
+											     }
+									}
+								}
+							}
+									if (stopp == 1) {
+										break;
+									}
+									stopp= 0;
 							
 							if(count >= 42) System.out.println("Unentschieden");				
 							
 			}	
-		}
-	
+	}	
 	public static String [][] display (){
 		// Das Spielfeld wird ausgegeben, (Als Übersicht)
-				System.out.println("\n        Vier Gewinnt\n");		
+				System.out.println("\n            Vier Gewinnt\n");		
 				String feld [][]= {   	 // [][1]  [][2]    [][2]   [][4]   [][5]   [][6]  [][7] 
 									{ "|" ," 1 |", " 2 |", " 3 |", " 4 |", " 5 |", " 6 |", " 7 |"},  
 									{ "|" ,"   |", "   |", "   |", "   |", "   |", "   |", "   |"},  //[1][]	
@@ -204,13 +320,13 @@ public class Main {
 				for(int i = 0; i < feld.length; i++) {
 					for(int j = 0; j < feld[i].length; j++) {
 					System.out.print(feld[i][j]);
-				}System.out.println();
+				}System.out.println(  );
 				}	
 				return feld;
 	}
-
-}	
-
+	
 
 	
-		
+	  
+
+}	
